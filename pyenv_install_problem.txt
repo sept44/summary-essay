@@ -1,1 +1,1 @@
-https://github.com/pyenv/pyenv/wiki/Common-build-problems
+1.使用安装pyenv安装python的时候，一定要优先安装python的系统依赖包，对应的系统依赖包请参考该网站：https://github.com/pyenv/pyenv/wiki/Common-build-problems
