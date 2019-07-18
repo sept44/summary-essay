@@ -1,0 +1,15 @@
+这个方法适用ubuntu系统
+第一步：apt-get install vsftpd
+第二步：修改配置文件；vim /etc/vsftpd.conf,在vsftpd.conf添加以下配置，相关的配置可以登陆ftp官网进行查询
+wirte_enable=YES
+userlist_deny=NO
+userlist_enable=YES
+userlist_file=/etc/ftpallow_user
+max_per_ip=50
+max_clients=2000
+第三步：创建/etc/ftpallow_user文件；/etc/ftpallow_user[文件的内容为该系统的子用户名，比如你的系统有root,user1,user2等用户，你希望别人可以用usr1
+或usr2登陆，可以在这个文件配置，就是把usr1和usr2(一行写一个用户名）；注意root用户是不能配置在这里的，一般来说我们不希望root权限给别人，但是有工作需要，
+请参考第四步]
+第四步：/etc/ftpusers文件；这个文件是ftp限制其他用户通过ftp登陆时限制其在本系统一些权限，比如不能使用root账号，如果要使用，可以把该文件中的root注释掉。
+第五步：重启ftp服务；service vsftpd restart
+end
